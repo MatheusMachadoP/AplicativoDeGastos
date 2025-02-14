@@ -8,7 +8,7 @@ const TelaRenda = ({ navigation }: any) => {
 
   const handleSalvarRenda = async () => {
     if (!salario && !outrasRendas) {
-      Alert.alert('Erro', 'Por favor, insira pelo menos uma forma de renda.');
+      Alert.alert('Erro', 'Por favor, insira ao menos uma forma de renda.');
       return;
     }
 

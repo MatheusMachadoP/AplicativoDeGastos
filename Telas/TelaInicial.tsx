@@ -55,12 +55,13 @@ const TelaInicial = ({ navigation }: any) => {
     setSaldoCarteira(saldo);
   };
 
-  const carregarRenda = async () => {
+  const carregarRenda = async () => { // Função para carregar a renda do AsyncStorage
     const rendaExistente = await AsyncStorage.getItem('renda');
     const renda = rendaExistente ? JSON.parse(rendaExistente) : { salario: 0, outrasRendas: 0 };
     setRenda(renda);
   };
 
+  // funçcao para atualizar os dados toda vez que a tela for focada
   useFocusEffect(
     React.useCallback(() => {
       carregarGastos();
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Dimensions.get('window').height / 2 - 0, // Centraliza verticalmente a logo
     left: Dimensions.get('window').width / 2 - 140, // Centraliza horizontalmente a logo
-    opacity: 0.15, // Diminui a opacidade da logo
+    opacity: 0.05, // Diminui a opacidade da logo
   },
   emprestimosContainer: {
     flex: 1,
